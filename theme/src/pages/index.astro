@@ -1,94 +1,107 @@
 ---
-import { Container, FeatureCard} from '@littlesticks/odyssey-theme-components';
-
+import {Icon} from 'astro-icon'
+import {
+  AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+  StickyTextImageSection,
+  CtaCardSection
+} from '@littlesticks/odyssey-theme-components';
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
+
+const seo = {
+	title: 'Landing Page #1 | Astro Odyssey Theme',
+	description: 'Landing Page #1 | Astro Odyssey Theme',
+};
 ---
 
-<Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-        <FeatureCard href="#" title="Landing Page 3" imgSrc="/assets/images/home/screenshots/landing-3">
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+<AnnouncementBar text="Read Our Latest Blog Post" href="/blog/posts/remote-work-mental-health/" slot="announcement-bar"/>
+<Layout seo={seo} >
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Don't Reinvent the Wheel</h1>
+			<p>Crear una idea de negocio donde se logre visualizar cambios en el fenómeno de el reciclaje y hacer parte del esfuerzo, 
+				mediante el manejo de desechos sólidos inicialmente en calles, empresas públicas y 
+				privadas para disminuir el impacto que causan ellos al medio ambiente.</p>
+		</div>
+		<div slot="btns-container">
+			<Button href="/theme/get-started" customIcon
+				>Get Started <Fragment slot="icon">
+          <Icon name="ic:baseline-chevron-right"/>
+        </Fragment></Button
+			>
+		</div>
+		<picture slot="image-container">
+			<img src="/assets/images/home/Fotos/logo.png" alt=""/>
+		</picture>
+	</TextAndImageHero>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+	<CustomerQuoteSection
+		quoteText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, vero nobis? Voluptas assumenda, voluptatibus commodi qui ducimus delectus praesentium maiores, impedit iure labore ratione, ea facilis numquam doloremque aperiam aspernatur."
+		customerName="Happy Customer"
+	/>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>Porque?</h2>
+			<p>
+				Ayudamos al medio ambiente
+			</p>
+		</div>
+		<Button slot="column-1-cta">Learn More</Button>
+		<div slot="column-2-body">
+			<h2>Como?</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+				mollitia cumque. Velit.
+			</p>
+		</div>
+		<Button slot="column-2-cta" outlined>Learn More</Button>
+		<div slot="column-3-body">
+			<h2>Que?</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+				mollitia cumque. Velit.
+			</p>
+		</div>
+		<Button slot="column-3-cta">Learn More</Button>
+	</ThreeColumnTextSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
+
+  <StickyTextImageSection>
+    <div slot="text-container">
+      <h1>Beneficios del proyecto</h1>
+      <br/>
+	  <h2> Fortalezer la cultura empresarial</h2>
+      <br/>
+        <h2>
+        Promover la responsabilidad ambiental en el sector empresarial 
+      </h2>
+    </div>
+     <picture slot="image-container">
+      <img
+        src="/assets/images/home/Fotos/metal.jpeg"
+        alt="Astro Odyssey"
+        loading="lazy"
+      />
+    </picture>
+  </StickyTextImageSection>
+
+  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+    <h2>Apoya al proyecto</h2>
+    <p>Puedes ayudarnos con comentarios en el siguiente boton</p>
+    <Button href="/theme/get-started" customIcon>Ayuda al planeta <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right"/>
+    </Fragment></Button>
+  </CtaCardSection>
+
 </Layout>
 
-<style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>
