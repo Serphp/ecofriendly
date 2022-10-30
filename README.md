@@ -1,4 +1,4 @@
-# ECO FRIENDLY PANAMÁ
+# ECO FRIENDLY P
 ----
 
 Proyecto universitario
