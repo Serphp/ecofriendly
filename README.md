@@ -4,4 +4,4 @@
 Proyecto universitario
 
 
-base [Oddysey Theme](https://github.com/littlesticks/odyssey-theme)
+base [Odyssey Theme](https://github.com/littlesticks/odyssey-theme)
